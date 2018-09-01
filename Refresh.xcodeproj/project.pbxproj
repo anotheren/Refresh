@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A03BA50B213616C2000AC08B /* RefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03BA50A213616C2000AC08B /* RefreshConst.swift */; };
+		A0848A77213A344A00FA6EBA /* RefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0848A76213A344A00FA6EBA /* RefreshHeader.swift */; };
+		A0848A79213A34A000FA6EBA /* RefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0848A78213A34A000FA6EBA /* RefreshFooter.swift */; };
 		A085DD2A2132996D00C888D4 /* Refresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085DD202132996D00C888D4 /* Refresh.framework */; };
 		A085DD2F2132996D00C888D4 /* RefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085DD2E2132996D00C888D4 /* RefreshTests.swift */; };
-		A085DD312132996D00C888D4 /* SPRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = A085DD232132996D00C888D4 /* SPRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A085DD312132996D00C888D4 /* Refresh.h in Headers */ = {isa = PBXBuildFile; fileRef = A085DD232132996D00C888D4 /* Refresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A085DD3B21329A7D00C888D4 /* RefreshState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085DD3A21329A7D00C888D4 /* RefreshState.swift */; };
 		A085DD3D2132A2CB00C888D4 /* RefreshBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085DD3C2132A2CB00C888D4 /* RefreshBase.swift */; };
-		A085DD3F2132A37800C888D4 /* Refresh+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085DD3E2132A37800C888D4 /* Refresh+UIScrollView.swift */; };
+		A0D93BB8213A3DC200AEA47E /* RefreshBase+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D93BB7213A3DC200AEA47E /* RefreshBase+UITableView.swift */; };
+		A0D93BBA213A4D8100AEA47E /* RefreshBase+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D93BB9213A4D8100AEA47E /* RefreshBase+UICollectionView.swift */; };
 		A0EB6FED2132AE0300977288 /* RefreshBase+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB6FEC2132AE0300977288 /* RefreshBase+UIScrollView.swift */; };
 		A0EB6FF12132AEA600977288 /* RefreshCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB6FF02132AEA600977288 /* RefreshCompatible.swift */; };
 		A0EB6FF32132D97300977288 /* RefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB6FF22132D97300977288 /* RefreshComponent.swift */; };
@@ -33,15 +36,18 @@
 
 /* Begin PBXFileReference section */
 		A03BA50A213616C2000AC08B /* RefreshConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshConst.swift; sourceTree = "<group>"; };
+		A0848A76213A344A00FA6EBA /* RefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshHeader.swift; sourceTree = "<group>"; };
+		A0848A78213A34A000FA6EBA /* RefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFooter.swift; sourceTree = "<group>"; };
 		A085DD202132996D00C888D4 /* Refresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Refresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A085DD232132996D00C888D4 /* SPRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRefresh.h; sourceTree = "<group>"; };
+		A085DD232132996D00C888D4 /* Refresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Refresh.h; sourceTree = "<group>"; };
 		A085DD242132996D00C888D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A085DD292132996D00C888D4 /* RefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A085DD2E2132996D00C888D4 /* RefreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTests.swift; sourceTree = "<group>"; };
 		A085DD302132996D00C888D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A085DD3A21329A7D00C888D4 /* RefreshState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshState.swift; sourceTree = "<group>"; };
 		A085DD3C2132A2CB00C888D4 /* RefreshBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshBase.swift; sourceTree = "<group>"; };
-		A085DD3E2132A37800C888D4 /* Refresh+UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Refresh+UIScrollView.swift"; sourceTree = "<group>"; };
+		A0D93BB7213A3DC200AEA47E /* RefreshBase+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RefreshBase+UITableView.swift"; sourceTree = "<group>"; };
+		A0D93BB9213A4D8100AEA47E /* RefreshBase+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RefreshBase+UICollectionView.swift"; sourceTree = "<group>"; };
 		A0EB6FEC2132AE0300977288 /* RefreshBase+UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RefreshBase+UIScrollView.swift"; sourceTree = "<group>"; };
 		A0EB6FF02132AEA600977288 /* RefreshCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshCompatible.swift; sourceTree = "<group>"; };
 		A0EB6FF22132D97300977288 /* RefreshComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshComponent.swift; sourceTree = "<group>"; };
@@ -89,17 +95,20 @@
 		A085DD222132996D00C888D4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				A085DD232132996D00C888D4 /* SPRefresh.h */,
+				A085DD232132996D00C888D4 /* Refresh.h */,
 				A085DD242132996D00C888D4 /* Info.plist */,
 				A085DD3A21329A7D00C888D4 /* RefreshState.swift */,
 				A03BA50A213616C2000AC08B /* RefreshConst.swift */,
 				A085DD3C2132A2CB00C888D4 /* RefreshBase.swift */,
 				A0EB6FF62132E02500977288 /* RefreshBase+UIView.swift */,
 				A0EB6FEC2132AE0300977288 /* RefreshBase+UIScrollView.swift */,
+				A0D93BB7213A3DC200AEA47E /* RefreshBase+UITableView.swift */,
+				A0D93BB9213A4D8100AEA47E /* RefreshBase+UICollectionView.swift */,
 				A0EB6FF02132AEA600977288 /* RefreshCompatible.swift */,
 				A0EB6FF42132DFD600977288 /* RefreshCompatible+UIView.swift */,
-				A085DD3E2132A37800C888D4 /* Refresh+UIScrollView.swift */,
 				A0EB6FF22132D97300977288 /* RefreshComponent.swift */,
+				A0848A76213A344A00FA6EBA /* RefreshHeader.swift */,
+				A0848A78213A34A000FA6EBA /* RefreshFooter.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -120,7 +129,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A085DD312132996D00C888D4 /* SPRefresh.h in Headers */,
+				A085DD312132996D00C888D4 /* Refresh.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,12 +234,15 @@
 				A085DD3D2132A2CB00C888D4 /* RefreshBase.swift in Sources */,
 				A0EB6FF72132E02500977288 /* RefreshBase+UIView.swift in Sources */,
 				A0EB6FF12132AEA600977288 /* RefreshCompatible.swift in Sources */,
+				A0D93BB8213A3DC200AEA47E /* RefreshBase+UITableView.swift in Sources */,
+				A0848A79213A34A000FA6EBA /* RefreshFooter.swift in Sources */,
 				A085DD3B21329A7D00C888D4 /* RefreshState.swift in Sources */,
 				A0EB6FED2132AE0300977288 /* RefreshBase+UIScrollView.swift in Sources */,
 				A0EB6FF52132DFD600977288 /* RefreshCompatible+UIView.swift in Sources */,
-				A085DD3F2132A37800C888D4 /* Refresh+UIScrollView.swift in Sources */,
 				A03BA50B213616C2000AC08B /* RefreshConst.swift in Sources */,
+				A0848A77213A344A00FA6EBA /* RefreshHeader.swift in Sources */,
 				A0EB6FF32132D97300977288 /* RefreshComponent.swift in Sources */,
+				A0D93BBA213A4D8100AEA47E /* RefreshBase+UICollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - UIScrollView + Helper
+
 extension RefreshBase where Base: UIScrollView {
     
     public var inset: UIEdgeInsets {
