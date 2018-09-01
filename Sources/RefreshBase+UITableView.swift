@@ -25,6 +25,7 @@ extension RefreshBase where Base: UITableView {
                     base.insertSubview(newValue, at: 0)
                 }
                 objc_setAssociatedObject(base, &tableViewHeaderKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+                UITableView.swizzleReloadData
             }
         }
     }

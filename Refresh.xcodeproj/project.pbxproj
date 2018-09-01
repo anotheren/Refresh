@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A01FBD2D213A88C3009D4F96 /* Swizzle+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01FBD2C213A88C3009D4F96 /* Swizzle+UITableView.swift */; };
+		A01FBD2F213A88E0009D4F96 /* Swizzle+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01FBD2E213A88E0009D4F96 /* Swizzle+UICollectionView.swift */; };
 		A03BA50B213616C2000AC08B /* RefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03BA50A213616C2000AC08B /* RefreshConst.swift */; };
 		A0848A77213A344A00FA6EBA /* RefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0848A76213A344A00FA6EBA /* RefreshHeader.swift */; };
 		A0848A79213A34A000FA6EBA /* RefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0848A78213A34A000FA6EBA /* RefreshFooter.swift */; };
@@ -17,6 +19,7 @@
 		A085DD3D2132A2CB00C888D4 /* RefreshBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085DD3C2132A2CB00C888D4 /* RefreshBase.swift */; };
 		A0D93BB8213A3DC200AEA47E /* RefreshBase+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D93BB7213A3DC200AEA47E /* RefreshBase+UITableView.swift */; };
 		A0D93BBA213A4D8100AEA47E /* RefreshBase+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D93BB9213A4D8100AEA47E /* RefreshBase+UICollectionView.swift */; };
+		A0D93BBC213A783400AEA47E /* SwizzleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D93BBB213A783400AEA47E /* SwizzleHelper.swift */; };
 		A0EB6FED2132AE0300977288 /* RefreshBase+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB6FEC2132AE0300977288 /* RefreshBase+UIScrollView.swift */; };
 		A0EB6FF12132AEA600977288 /* RefreshCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB6FF02132AEA600977288 /* RefreshCompatible.swift */; };
 		A0EB6FF32132D97300977288 /* RefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB6FF22132D97300977288 /* RefreshComponent.swift */; };
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A01FBD2C213A88C3009D4F96 /* Swizzle+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swizzle+UITableView.swift"; sourceTree = "<group>"; };
+		A01FBD2E213A88E0009D4F96 /* Swizzle+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swizzle+UICollectionView.swift"; sourceTree = "<group>"; };
 		A03BA50A213616C2000AC08B /* RefreshConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshConst.swift; sourceTree = "<group>"; };
 		A0848A76213A344A00FA6EBA /* RefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshHeader.swift; sourceTree = "<group>"; };
 		A0848A78213A34A000FA6EBA /* RefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFooter.swift; sourceTree = "<group>"; };
@@ -48,6 +53,7 @@
 		A085DD3C2132A2CB00C888D4 /* RefreshBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshBase.swift; sourceTree = "<group>"; };
 		A0D93BB7213A3DC200AEA47E /* RefreshBase+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RefreshBase+UITableView.swift"; sourceTree = "<group>"; };
 		A0D93BB9213A4D8100AEA47E /* RefreshBase+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RefreshBase+UICollectionView.swift"; sourceTree = "<group>"; };
+		A0D93BBB213A783400AEA47E /* SwizzleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwizzleHelper.swift; sourceTree = "<group>"; };
 		A0EB6FEC2132AE0300977288 /* RefreshBase+UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RefreshBase+UIScrollView.swift"; sourceTree = "<group>"; };
 		A0EB6FF02132AEA600977288 /* RefreshCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshCompatible.swift; sourceTree = "<group>"; };
 		A0EB6FF22132D97300977288 /* RefreshComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshComponent.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				A0D93BB9213A4D8100AEA47E /* RefreshBase+UICollectionView.swift */,
 				A0EB6FF02132AEA600977288 /* RefreshCompatible.swift */,
 				A0EB6FF42132DFD600977288 /* RefreshCompatible+UIView.swift */,
+				A0D93BBB213A783400AEA47E /* SwizzleHelper.swift */,
+				A01FBD2C213A88C3009D4F96 /* Swizzle+UITableView.swift */,
+				A01FBD2E213A88E0009D4F96 /* Swizzle+UICollectionView.swift */,
 				A0EB6FF22132D97300977288 /* RefreshComponent.swift */,
 				A0848A76213A344A00FA6EBA /* RefreshHeader.swift */,
 				A0848A78213A34A000FA6EBA /* RefreshFooter.swift */,
@@ -233,7 +242,9 @@
 			files = (
 				A085DD3D2132A2CB00C888D4 /* RefreshBase.swift in Sources */,
 				A0EB6FF72132E02500977288 /* RefreshBase+UIView.swift in Sources */,
+				A01FBD2D213A88C3009D4F96 /* Swizzle+UITableView.swift in Sources */,
 				A0EB6FF12132AEA600977288 /* RefreshCompatible.swift in Sources */,
+				A0D93BBC213A783400AEA47E /* SwizzleHelper.swift in Sources */,
 				A0D93BB8213A3DC200AEA47E /* RefreshBase+UITableView.swift in Sources */,
 				A0848A79213A34A000FA6EBA /* RefreshFooter.swift in Sources */,
 				A085DD3B21329A7D00C888D4 /* RefreshState.swift in Sources */,
@@ -241,6 +252,7 @@
 				A0EB6FF52132DFD600977288 /* RefreshCompatible+UIView.swift in Sources */,
 				A03BA50B213616C2000AC08B /* RefreshConst.swift in Sources */,
 				A0848A77213A344A00FA6EBA /* RefreshHeader.swift in Sources */,
+				A01FBD2F213A88E0009D4F96 /* Swizzle+UICollectionView.swift in Sources */,
 				A0EB6FF32132D97300977288 /* RefreshComponent.swift in Sources */,
 				A0D93BBA213A4D8100AEA47E /* RefreshBase+UICollectionView.swift in Sources */,
 			);

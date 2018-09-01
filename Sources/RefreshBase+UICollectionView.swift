@@ -25,6 +25,7 @@ extension RefreshBase where Base: UICollectionView {
                     base.insertSubview(newValue, at: 0)
                 }
                 objc_setAssociatedObject(base, &collectionViewHeaderKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+                UICollectionView.swizzleReloadData
             }
         }
     }
