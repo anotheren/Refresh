@@ -24,7 +24,7 @@ extension RefreshBase where Base: UIScrollView {
         get {
             return inset.top
         }
-        set {
+        nonmutating set {
             var inset = base.contentInset
             inset.top = newValue
             if #available(iOS 11.0, *) {
@@ -39,7 +39,7 @@ extension RefreshBase where Base: UIScrollView {
         get {
             return inset.bottom
         }
-        set {
+        nonmutating set {
             var inset = base.contentInset
             inset.bottom = newValue
             if #available(iOS 11.0, *) {
@@ -53,7 +53,7 @@ extension RefreshBase where Base: UIScrollView {
         get {
             return inset.left
         }
-        set {
+        nonmutating set {
             var inset = base.contentInset
             inset.left = newValue
             if #available(iOS 11.0, *) {
@@ -67,7 +67,7 @@ extension RefreshBase where Base: UIScrollView {
         get {
             return inset.right
         }
-        set {
+        nonmutating set {
             var inset = base.contentInset
             inset.right = newValue
             if #available(iOS 11.0, *) {
@@ -81,7 +81,7 @@ extension RefreshBase where Base: UIScrollView {
         get {
             return base.contentOffset.x
         }
-        set {
+        nonmutating set {
             base.contentOffset.x = newValue
         }
     }
@@ -90,7 +90,7 @@ extension RefreshBase where Base: UIScrollView {
         get {
             return base.contentOffset.y
         }
-        set {
+        nonmutating set {
             base.contentOffset.y = newValue
         }
     }
@@ -99,7 +99,7 @@ extension RefreshBase where Base: UIScrollView {
         get {
             return base.contentSize.width
         }
-        set {
+        nonmutating set {
             base.contentSize.width = newValue
         }
     }
@@ -108,7 +108,7 @@ extension RefreshBase where Base: UIScrollView {
         get {
             return base.contentSize.height
         }
-        set {
+        nonmutating set {
             base.contentSize.height = newValue
         }
     }

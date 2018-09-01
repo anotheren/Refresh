@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class RefreshBase<Base> {
+public struct RefreshBase<Base> {
     
     public let base: Base
     

@@ -14,7 +14,7 @@ extension RefreshBase where Base: UIView {
         get {
             return base.frame.origin.x
         }
-        set {
+        nonmutating set {
             base.frame.origin.x = newValue
         }
     }
@@ -23,7 +23,7 @@ extension RefreshBase where Base: UIView {
         get {
             return base.frame.origin.y
         }
-        set {
+        nonmutating set {
             base.frame.origin.y = newValue
         }
     }
@@ -32,7 +32,7 @@ extension RefreshBase where Base: UIView {
         get {
             return base.frame.size.width
         }
-        set {
+        nonmutating set {
             base.frame.size.width = newValue
         }
     }
@@ -41,7 +41,7 @@ extension RefreshBase where Base: UIView {
         get {
             return base.frame.size.height
         }
-        set {
+        nonmutating set {
             base.frame.size.height = newValue
         }
     }
@@ -50,7 +50,7 @@ extension RefreshBase where Base: UIView {
         get {
             return base.frame.size
         }
-        set {
+        nonmutating set {
             base.frame.size = newValue
         }
     }
@@ -59,7 +59,7 @@ extension RefreshBase where Base: UIView {
         get {
             return base.frame.origin
         }
-        set {
+        nonmutating set {
             base.frame.origin = newValue
         }
     }
