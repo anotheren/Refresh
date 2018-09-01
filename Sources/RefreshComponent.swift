@@ -10,25 +10,23 @@ import UIKit
 
 public class RefreshComponent: UIView {
     
-    public typealias RefreshingBlock = () -> Void
-    public typealias BeginRefreshingCompletion = () -> Void
-    public typealias EndRefreshingCompletion = () -> Void
+    public typealias RefreshingHandle = () -> Void
+    public typealias BeginRefreshingHandle = () -> Void
+    public typealias EndRefreshingHandle = () -> Void
     
-    var status: RefreshState = .idle {
+    public var state: RefreshState = .idle {
         didSet {
-            DispatchQueue.main.async {
-                self.setNeedsLayout()
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.setNeedsLayout()
             }
         }
     }
     
-    var riginalInset: UIEdgeInsets = .zero
+    var originalInset: UIEdgeInsets = .zero
     weak var scrollView: UIScrollView?
     
     private var pan: UIPanGestureRecognizer?
-    
-    weak var refreshingTarget: AnyObject?
-    var refreshingAction: Selector?
     
     public var pullingPercent: CGFloat = 0 {
         didSet {
@@ -39,8 +37,9 @@ public class RefreshComponent: UIView {
         }
     }
     
-    var beginRefreshingCompletion: BeginRefreshingCompletion?
-    var endRefreshingCompletion: EndRefreshingCompletion?
+    var refreshingHandle: RefreshingHandle?
+    var beginRefreshingHandle: BeginRefreshingHandle?
+    var endRefreshingHandle: EndRefreshingHandle?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,15 +76,15 @@ public class RefreshComponent: UIView {
         
         scrollView = newScrollView
         newScrollView.alwaysBounceVertical = true
-        riginalInset = newScrollView.refresh.inset
+        originalInset = newScrollView.refresh.inset
         
         addObservers()
     }
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        if status == .willRefresh {
-            status = .refreshing
+        if state == .willRefresh {
+            state = .refreshing
         }
     }
     
@@ -132,44 +131,40 @@ public class RefreshComponent: UIView {
         fatalError("Please override by subclass")
     }
     
-    func setRefreshing(target: AnyObject, action: Selector) {
-        refreshingTarget = target
-        refreshingAction = action
-    }
-    
     public func beginRefreshing() {
         UIView.animate(withDuration: RefreshConst.Animation.fastDuration) {
             self.alpha = 1.0
         }
         pullingPercent = 1.0
         if window != nil {
-            status = .refreshing
+            state = .refreshing
         } else {
-            if status != .refreshing {
-                status = .willRefresh
+            if state != .refreshing {
+                state = .willRefresh
                 setNeedsDisplay()
             }
         }
     }
     
-    public func beginRefreshing(with completion: @escaping BeginRefreshingCompletion) {
-        beginRefreshingCompletion = completion
+    public func beginRefreshing(with handle: @escaping BeginRefreshingHandle) {
+        beginRefreshingHandle = handle
         beginRefreshing()
     }
     
     public func endRefreshing() {
-        DispatchQueue.main.async {
-            self.status = .idle
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.state = .idle
         }
     }
     
-    public func endRefreshing(with completion: @escaping EndRefreshingCompletion) {
-        endRefreshingCompletion = completion
+    public func endRefreshing(with handle: @escaping EndRefreshingHandle) {
+        endRefreshingHandle = handle
         endRefreshing()
     }
     
     public var isRefreshing: Bool {
-        return status == .refreshing || status == .willRefresh
+        return state == .refreshing || state == .willRefresh
     }
     
     public var isAutomaticallyChangeAlpha: Bool = true {
@@ -184,6 +179,10 @@ public class RefreshComponent: UIView {
     }
     
     func executeRefreshingCallback() {
-        
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.refreshingHandle?()
+            strongSelf.beginRefreshingHandle?()
+        }
     }
 }
