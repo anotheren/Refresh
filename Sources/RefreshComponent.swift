@@ -16,10 +16,7 @@ public class RefreshComponent: UIView {
     
     public var state: RefreshState = .idle {
         didSet {
-            DispatchQueue.main.async { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.setNeedsLayout()
-            }
+            update(state: state, oldState: oldValue)
         }
     }
     
@@ -183,6 +180,13 @@ public class RefreshComponent: UIView {
             guard let strongSelf = self else { return }
             strongSelf.refreshingHandle?()
             strongSelf.beginRefreshingHandle?()
+        }
+    }
+    
+    public func update(state: RefreshState, oldState: RefreshState) {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.setNeedsLayout()
         }
     }
 }

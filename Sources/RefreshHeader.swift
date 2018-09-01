@@ -18,38 +18,6 @@ public class RefreshHeader: RefreshComponent {
         }
     }
     
-    public override var state: RefreshState {
-        didSet {
-            guard state != oldValue else { return }
-            if state == .idle {
-                guard oldValue == .refreshing else { return }
-                
-                UserDefaults.standard.set(Date(), forKey: lastUpdatedTimeKey)
-                
-                UIView.animate(withDuration: RefreshConst.Animation.slowDuration, animations: {
-                    self.scrollView?.refresh.insetTop += self.insetTopDelta
-                }) { finished in
-                    self.pullingPercent = 0
-                    self.endRefreshingHandle?()
-                }
-            } else if state == .refreshing {
-                DispatchQueue.main.async { [weak self] in
-                    guard let strongSelf = self else { return }
-                    UIView.animate(withDuration: RefreshConst.Animation.fastDuration, animations: {
-                        guard let scrollView = strongSelf.scrollView else { return }
-                        let top: CGFloat = strongSelf.originalInset.top + strongSelf.refresh.height
-                        scrollView.refresh.insetTop = top
-                        var offset: CGPoint = scrollView.contentOffset
-                        offset.y = -top
-                        scrollView.setContentOffset(offset, animated: false)
-                    }, completion: { finished in
-                        strongSelf.executeRefreshingCallback()
-                    })
-                }
-            }
-        }
-    }
-    
     private var insetTopDelta: CGFloat = 0
     
     public init(refreshing: @escaping RefreshingHandle) {
@@ -106,6 +74,37 @@ public class RefreshHeader: RefreshComponent {
             beginRefreshing()
         } else if pullingPercent < 1 {
             self.pullingPercent = pullingPercent
+        }
+    }
+    
+    public override func update(state: RefreshState, oldState: RefreshState) {
+        if state == oldState { return }
+        super.update(state: state, oldState: oldState)
+        if state == .idle {
+            guard oldState == .refreshing else { return }
+            
+            UserDefaults.standard.set(Date(), forKey: lastUpdatedTimeKey)
+            
+            UIView.animate(withDuration: RefreshConst.Animation.slowDuration, animations: {
+                self.scrollView?.refresh.insetTop += self.insetTopDelta
+            }) { finished in
+                self.pullingPercent = 0
+                self.endRefreshingHandle?()
+            }
+        } else if state == .refreshing {
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                UIView.animate(withDuration: RefreshConst.Animation.fastDuration, animations: {
+                    guard let scrollView = strongSelf.scrollView else { return }
+                    let top: CGFloat = strongSelf.originalInset.top + strongSelf.refresh.height
+                    scrollView.refresh.insetTop = top
+                    var offset: CGPoint = scrollView.contentOffset
+                    offset.y = -top
+                    scrollView.setContentOffset(offset, animated: false)
+                }, completion: { finished in
+                    strongSelf.executeRefreshingCallback()
+                })
+            }
         }
     }
 }
